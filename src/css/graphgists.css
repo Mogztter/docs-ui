@@ -2,6 +2,14 @@ body.graphgists .hero {
   padding-bottom: 2em !important;
 }
 
+body.graphgists .leading .sectionbody {
+  padding-top: 1rem;
+}
+
+body.graphgists .leading .sectionbody .imageblock.left {
+  margin-right: 2rem;
+}
+
 body.graphgists ul.use-cases,
 body.graphgists ul.industries {
   display: grid;
@@ -26,25 +34,25 @@ body.graphgists ul.industries > li img {
   margin-right: 0.5em;
 }
 
-body.graphgists ul.graphgists {
+body.graphgists ul.featured-graphgists {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   margin: 0;
   padding: 1em 0 0;
 }
 
-body.graphgists ul.graphgists li::after {
+body.graphgists ul.featured-graphgists li::after {
   content: "";
   flex: auto;
 }
 
-body.graphgists ul.graphgists > li {
+body.graphgists ul.featured-graphgists > li {
   padding: 1em;
   display: flex;
   flex-grow: 1;
 }
 
-body.graphgists ul.graphgists > li > a {
+body.graphgists ul.featured-graphgists > li > a {
   cursor: pointer;
 }
 
