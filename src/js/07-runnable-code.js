@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const blocksUsingNeo4jJavaScriptDriver = runnable.filter((block) => !block.className.includes('backend:graphgist'))
   if (blocksUsingNeo4jJavaScriptDriver.length && (!window.neo4j || !window.neo4j.driver)) {
-    // use :page-includedriver: attribute in your AsciiDoc document to include the Neo4j driver!
+    // use :page-includedriver: attribute in your AsciiDoc document to include the Neo4j driver
     console.warn('Neo4j driver is not loaded, unable to run Cypher queries...')
     return
   }

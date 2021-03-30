@@ -1,5 +1,5 @@
-/* graphgists (index) */
-body.graphgists .hero {
+body.graphgists .hero,
+body.graphgist .hero {
   padding-bottom: 2em !important;
 }
 
@@ -35,25 +35,25 @@ body.graphgists ul.industries > li img {
   margin-right: 0.5em;
 }
 
-body.graphgists ul.featured-graphgists {
+body.graphgists ul.graphgists {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   margin: 0;
   padding: 1em 0 0;
 }
 
-body.graphgists ul.featured-graphgists li::after {
+body.graphgists ul.graphgists li::after {
   content: "";
   flex: auto;
 }
 
-body.graphgists ul.featured-graphgists > li {
+body.graphgists ul.graphgists > li {
   padding: 1em;
   display: flex;
   flex-grow: 1;
 }
 
-body.graphgists ul.featured-graphgists > li > a {
+body.graphgists ul.graphgists > li > a {
   cursor: pointer;
 }
 
@@ -122,10 +122,40 @@ body.graphgists .graphgist-card .graphgist-info ul.graphgist-industries > li:not
 
 /* graphgist page */
 
+body.graphgist .navbar {
+  border-bottom: none;
+}
+
+body.graphgist .doc {
+  max-width: none;
+  padding: 2em 0;
+  margin: 0;
+  width: 100%;
+  flex: none;
+}
+
 body.graphgist .doc > .sect1 > .sectionbody {
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
+}
+
+body.graphgist .graphgist-metadata dd,
+body.graphgist .graphgist-metadata dt {
+  display: inline-block;
+  margin-left: 0;
+  padding: 0;
+}
+
+.graphgist-metadata-menu ul {
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.graphgist-metadata-menu ul > li:not(:last-child) {
+  margin-right: 1rem;
 }

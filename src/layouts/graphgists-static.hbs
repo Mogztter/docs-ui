@@ -59,47 +59,10 @@
       <div class="sect1">
         <h2>Featured GraphGists</h2>
         <div class="sectionbody">
-          <ul class="featured-graphgists">
+          <ul class="graphgists">
             {{#each page.attributes.featured-pages}}
-            <li>
-              <div class="graphgist-card">
-                <a href="{{@root.page.attributes.canonical-root}}{{this.pub.url}}">
-                  {{#with (or this.imageUrl "https://dist.neo4j.com/wp-content/uploads/20160303103313/noun_22440-grey-02.png")}}
-                    <div class="graphgist-illustration" style="background-image: url('{{{this}}}')"></div>
-                  {{/with}}
-                </a>
-                <div class="graphgist-content">
-                  <h3><a href="{{@root.page.attributes.canonical-root}}{{this.pub.url}}">{{this.title}}</a></h3>
-                  <dl class="graphgist-info">
-                    {{#with this.author}}
-                      <dt>Author</dt>
-                      <dd>{{this.name}}</dd>
-                    {{/with}}
-                    {{#if this.industries}}
-                      <dt>Industries</dt>
-                      <dd>
-                        <ul class="graphgist-industries">
-                          {{#each this.industries}}
-                            <li><a href="{{{relativize pub.url}}}">{{name}}</a></li>
-                          {{/each}}
-                        </ul>
-                      </dd>
-                    {{/if}}
-                    {{#if this.use_cases}}
-                      <dt>Use Cases</dt>
-                      <dd>
-                        <ul class="graphgist-use-cases">
-                          {{#each this.use_cases}}
-                            <li><a href="{{{relativize pub.url}}}">{{name}}</a></li>
-                          {{/each}}
-                        </ul>
-                      </dd>
-                    {{/if}}
-                  </dl>
-                </div>
-              </div>
-            </li>
-          {{/each}}
+              <li>{{> graphgist-card }}</li>
+            {{/each}}
           </ul>
         </div>
       </div>

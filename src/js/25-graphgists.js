@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   if (featuredSectionTitleElement) {
     getFeatured().then((featuredResponse) => {
       console.log('featuredResponse', featuredResponse)
-      const listElement = createElement('ul', 'featured-graphgists', toGraphGistCardItem(featuredResponse.data.GraphGist))
+      const listElement = createElement('ul', 'graphgists', toGraphGistCardItem(featuredResponse.data.GraphGist))
       const containerElement = createElement('section', 'sectionbody', [listElement])
       featuredSectionTitleElement.parentElement.appendChild(containerElement)
     })

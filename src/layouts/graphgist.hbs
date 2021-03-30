@@ -40,9 +40,11 @@
             </dl>
             <div class="graphgist-metadata-menu">
               <ul>
-                <li><a href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Jupyter Notebook</a></li>
+                <li><a class="button" download href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Jupyter Notebook</a></li>
+                {{#with page.attributes.browserGuideUrl}}
+                  <li><a class="button" target="_blank" href="{{@root.page.attributes.canonical-root}}{{this}}">Play as Browser Guide</a></li>
+                {{/with}}
                 <li><a href="https://portal.graphgist.org/graph_gists/{{page.attributes.slug}}/source">Show source</a></li>
-                <li><a href="{{@root.page.attributes.canonical-root}}{{page.attributes.browserGuideUrl}}">Play as Browser Guide</a></li>
               </ul>
             </div>
           </aside>
