@@ -202,7 +202,7 @@ const { getCookie } = require('./modules/cookies')
   }
 
   if (typeof IntersectionObserver !== 'undefined') {
-    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+    const intersectionObserver = new IntersectionObserver((_) => {
       updateFeedbackPosition()
     })
     intersectionObserver.observe(footerElement)
