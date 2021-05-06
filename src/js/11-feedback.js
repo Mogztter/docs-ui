@@ -1,6 +1,6 @@
 const { getCookie } = require('./modules/cookies')
 
-/* global fetch */
+/* global fetch, IntersectionObserver */
 ;(function () {
   'use strict'
 
@@ -184,10 +184,11 @@ const { getCookie } = require('./modules/cookies')
     })
   }
 
-  window.addEventListener('scroll', function (event) {
-    var position = window.scrollY
-    var windowHeight = window.innerHeight
-    var footerOffset = document.getElementsByTagName('footer')[0].offsetTop
+  const footerElement = document.getElementsByTagName('footer')[0]
+  const updateFeedbackPosition = (_) => {
+    const position = window.scrollY
+    const windowHeight = window.innerHeight
+    const footerOffset = footerElement.offsetTop
 
     if (position + windowHeight > footerOffset) {
       feedback.classList.add('absolute')
@@ -198,7 +199,16 @@ const { getCookie } = require('./modules/cookies')
       feedback.style.top = 'auto'
       feedback.style.bottom = '0px'
     }
-  })
+  }
+
+  if (typeof IntersectionObserver !== 'undefined') {
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+      updateFeedbackPosition()
+    })
+    intersectionObserver.observe(footerElement)
+  }
+  window.addEventListener('resize', updateFeedbackPosition)
+  window.addEventListener('scroll', updateFeedbackPosition)
 
   reset()
 })()
